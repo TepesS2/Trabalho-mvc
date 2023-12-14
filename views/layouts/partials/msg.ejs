@@ -1,0 +1,17 @@
+<div id="msg">
+	<% if(locals.layoutVariables.msg){ %>
+		
+		<div class="alert <%- locals.layoutVariables.msg.class %>" role="alert">
+			<%- locals.layoutVariables.msg.msg %>
+		</div>
+		<script>
+			setTimeout(function() {
+				document.querySelector('#msg').innerHTML="";
+			},3000)
+		</script>
+	<%	
+
+	}
+    
+	%>
+</div>

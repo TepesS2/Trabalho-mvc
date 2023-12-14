@@ -1,0 +1,14 @@
+<div class="card mb-3"  style="max-width: 540px; margin: 0 auto; border-color: #ffe600; background-color: rgb(41,15,131); color: #ffe600;">
+    <div class="card-body">
+    <p>Título:<br><%- tarefa.title %></p>
+    <p>Descrição:<br><%- tarefa.description %></p>
+    <%if(tarefa.status == 'P'){ %>
+        <p>Status:<br>Pendente</p>
+    <%}else { %> 
+        <p>Status:<br>Finalizada</p>
+    <%} %>
+</div>
+</div>
+<div class="card" style="max-width: 540px; margin: auto;">
+	<a class="btn btn-primary" href="/tarefas" role="button" style="background-color: #09031d;border-color: #ffe600; color: #ffe600;">Voltar</a>
+</div>

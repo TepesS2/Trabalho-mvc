@@ -1,0 +1,21 @@
+<div style="margin:o auto;">
+	<form method="post" action="/usuario/salvar">
+		<input type="hidden" name="idUsuario" value="<%- usuario.id_usuario %>" />
+		<div class="mb-3">
+			<label for="formControlInputNome" class="form-label">Nome</label>
+			<input class="form-control" name="nome" value="<%- usuario.nome %>" type="text" placeholder="Nome" style="background-color: rgb(41,15,131);border-color: #ffe600;color: #ffe600;">
+		</div>
+			<div class="mb-3">
+			<label for="formControlInputEmail" class="form-label">E-mail</label>
+			<input type="email" class="form-control" name="email" value="<%- usuario.email %>" id="formControlInputEmail" placeholder="nome@exemplo.com" style="background-color: rgb(41,15,131);border-color: #ffe600;color: #ffe600;">
+		</div>
+		<div class="mb-3">
+			<label for="formFile" class="form-label">Imagem</label>
+			<input class="form-control" name="imagem" value="<%- usuario.imagem %>" type="file" id="formFile" style="background-color: rgb(41,15,131);border-color: #ffe600;color: #ffe600;">
+		</div>
+		<div class="mb-3">
+			<button type="submit" class="btn btn-primary mb-3" style="background-color: #09031d;border-color: #ffe600; color: #ffe600;">Salvar</button>
+			<a class="btn btn-primary mb-3" href="/usuario/perfil/<%- usuario.id_usuario %>" role="button" style="background-color: #09031d;border-color: #ffe600; color: #ffe600;">Voltar</a>
+		</div>	
+	</form>
+</div>
