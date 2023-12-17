@@ -1,46 +1,45 @@
-
 <h1>Lista de Tarefas</h1> 
-<ul class="list-group" id="lista"">
-    
-    <% tarefas.forEach(tarefa => { %> 
-        <li class="list-group-item" style="display:flex; justify-content: space-between;">
-            <div class="form-check form-switch">
-                <%if(tarefa.status == 'P'){ %>
-                    <a href="/checar/<%- tarefa.id_tarefa %>">
-                        <i class="bi-clipboard-fill" style="font-size: 1.5rem; color: #d9534f;"></i>
-                    </a>
-                <%}else { %> 
-                    <a href="/checar/<%- tarefa.id_tarefa %>">
-                        <i class="bi-clipboard-check-fill" style="font-size: 1.5rem; color: #5cb85c;"></i>
-                    </a>
-                <%} %>
-                    
-            </div>
-            <div>
-                <a href="/tarefa/<%- tarefa.id_tarefa %>" style="color: #ffe600;"><%= tarefa.title %></a>
-            </div>
-            <div>
-                <a href="/tarefa/edit/<%- tarefa.id_tarefa %>">
-                    <i class="bi-vector-pen" style="font-size: 1.5rem; color: #ffe600;"></i>
-                </a>
-                <a href="/tarefa/delete/<%- tarefa.id_tarefa %>">
-                    <i class="bi-trash3" style="font-size: 1.5rem; color: #F00;"></i>
-                </a>
-            </div>
-            
-        </li> 
-        <% }); %> 
+		<ul class="list-group" id="lista"">
+			
+			<% tarefas.forEach(tarefa => { %> 
+				<li class="list-group-item" style="display:flex; justify-content: space-between;">
+					<div class="form-check form-switch">
+						<%if(tarefa.status == 'P'){ %>
+							<a href="/checar/<%- tarefa.id_tarefa %>">
+								<i class="bi bi-check-square-fill" style="font-size: 1.5rem; color:red;"></i>
+							</a>
+						<%}else { %> 
+							<a href="/checar/<%- tarefa.id_tarefa %>">
+								<i class="bi bi-check-square-fill" style="font-size: 1.5rem; color: green"></i>
+							</a>
+						<%} %>
+							
+					</div>
+					<div>
+						<a href="/tarefa/<%- tarefa.id_tarefa %>" style="color:black;"><%= tarefa.title %></a>
+					</div>
+					<div>
+						<a href="/tarefa/edit/<%- tarefa.id_tarefa %>">
+                            <i class="bi bi-pencil-fill mr-3" style="color:green;"></i>
+						</a>
+						<a href="/tarefa/delete/<%- tarefa.id_tarefa %>">
+							<i class="bi bi-trash-fill" style="color: #e74c3c;"></i>
+						</a>
+					</div>
+					
+				</li> 
+				<% }); %> 
 </ul> 
 <hr/>
 <form action="/tarefa" method="POST"> 
 
 <div class="mb-3">
     <label for="tituloTarefa" class="form-label">Título</label>
-    <input type="text" name="titulo" class="form-control" style="background-color: rgb(41,15,131);border-color: #ffe600;color: #ffe600;"> 
+    <input type="text" name="titulo" class="form-control" placeholder="Nova tarefa"> 
 </div>
 <div class="mb-3">
     <label for="descricaoTarefa" class="form-label">Descrição</label>
-    <textarea class="form-control" name="descricao" id="descricaoTarefa" rows="3" style="background-color: rgb(41,15,131);border-color: #ffe600;color: #ffe600;"></textarea>
+    <textarea class="form-control" name="descricao" id="descricaoTarefa" rows="3"></textarea>
 </div>
 
 <div class="mb-3">
@@ -48,7 +47,7 @@
 </div>
 
 <div class="mb-3">
-    <button type="submit" class="btn" style="background-color: #09031d;border-color: #ffe600; color: #ffe600;">Adicionar</button> 
+    <button type="submit" class="btn btn-primary mb-3">Adicionar</button>
 </div>
 
 </form> 

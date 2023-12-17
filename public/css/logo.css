@@ -1,0 +1,54 @@
+/* Header Styles */
+header {
+    border-bottom: 2px solid #3498db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-family: 'Roboto', 'Arial', sans-serif; /* Modern sans-serif font with fallbacks */
+}
+
+/* Logo Styles */
+header #logo {
+    display: flex; /* Use flexbox for the logo container */
+    align-items: center; /* Align items vertically in the logo container */
+}
+
+header #logo img {
+    height: 10vh;
+    width: auto;
+}
+
+/* Logo Title Styles */
+header #logo h1.logo-title {
+    margin-left: auto; /* Move the title to the right */
+    font-size: 1.5rem; /* Adjust the font size of the title */
+    color: #333; /* Adjust the color of the title */
+}
+
+/* User Section Styles */
+header #user {
+    display: flex;
+    align-items: center;
+}
+
+header #user p {
+    margin: 0;
+}
+
+header #user i.bi-person {
+    font-size: 3rem;
+    color: #000000;
+}
+
+header #user a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #333; /* Adjust link color */
+    margin: 0 1rem; /* Adjust spacing between links */
+}
+
+header #user a.btn-primary i.bi-arrow-right {
+    font-size: 2.5rem;
+    color: #1D62DB;
+}

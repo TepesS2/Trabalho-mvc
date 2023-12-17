@@ -3,18 +3,18 @@
 		<input type="hidden" name="idTarefa" class="form-control" value="<%- tarefa.id_tarefa %>">
 		<div class="mb-3">
 			<label for="formControlInputTitulo" class="form-label">Titulo</label>
-			<input type="text" class="form-control" name="titulo" value="<%- tarefa.title %>" id="formControlInputTitulo" placeholder="Informe o título" style="background-color: rgb(41,15,131);border-color: #ffe600;color: #ffe600;">
+			<input type="text" class="form-control" name="titulo" value="<%- tarefa.title %>" id="formControlInputTitulo" placeholder="Informe o título" >
 		</div>
 			<div class="mb-3">
 			<label for="formControlInputDescricao" class="form-label">Descrição</label>
-			<input type="text" class="form-control" name="descricao" value="<%- tarefa.description %>" id="formControlInputDescricao" placeholder="Informa a descrição" style="background-color: rgb(41,15,131);border-color: #ffe600;color: #ffe600;">
+			<input type="text" class="form-control" name="descricao" value="<%- tarefa.description %>" id="formControlInputDescricao" placeholder="Informa a descrição">
 		</div>
         <div class="mb-3">
 			<input type="hidden" name="idUsuario" class="form-control" value="<%- locals.layoutVariables.user.id_usuario %>"> 
 		</div>
 		<div class="mb-3">
-			<button type="submit" class="btn btn-primary mb-3" style="background-color: #09031d;border-color: #ffe600; color: #ffe600;">Salvar</button>
-			<a class="btn btn-primary mb-3" href="/tarefas" role="button" style="background-color: #09031d;border-color: #ffe600; color: #ffe600;">Voltar</a>
+			<button type="submit" class="btn btn-primary mb-3">Salvar</button>
+			<a  class="btn btn-primary mb-3" href="/tarefas" role="button" >Voltar</a>
 		</div>
 	</form>
 </div>

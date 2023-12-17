@@ -1,16 +1,16 @@
 <header>
-	<div id="logo"><a href="/"><i class="bi-house-fill" style="font-size: 1.7rem; color: #ffe600;"></i></a></div>
+	<div id="logo"> <img src="<%- locals.layoutVariables.img %>logo3.png" alt="Logo">  <h1 class="logo-title">Check List De Tarefas</h1>
 	<div id="display"></div>
-	<div id="user"">
+	<div id="user">
 		<% if(locals.layoutVariables.user){ %>
 			<div id="usua">
 				<p>
-					<a href="/usuario/perfil/<%- locals.layoutVariables.user.id_usuario %>"  style="color: #ffe600;">
-						<i class="bi-person" style="font-size: 1.1rem; color: #0f0;"></i>
+					<a href="/usuario/perfil/<%- locals.layoutVariables.user.id_usuario %>"  style="color:#474747;">
+						<i class="bi-person" style="font-size: 3rem; color: #000000; font-family: 'Times New Roman', Times, serif;"></i>
 						<%- locals.layoutVariables.user.nome %>
 					</a>
 					<a href="/logout" class="btn-primary">
-						<i class="bi-box-arrow-right" style="font-size: 1.1rem; color: rgb(255, 0, 0);"></i>
+						<i class="bi-arrow-right" style="font-size: 2.5rem; color: #1D62DB; font: sans-serif;"></i>
 					</a>
 				</p>
 			</div>

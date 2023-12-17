@@ -1,0 +1,139 @@
+/* Header Styles */
+header {
+    border-bottom: 2px solid #3498db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Logo Styles */
+header #logo {
+    margin-right: auto;
+}
+
+header #logo img {
+    height: 9vh; /* Adjusted the height back to the previous value */
+    width: auto;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #2ecc71;
+}
+
+/* Main Content Styles */
+main {
+    margin: 5vh 2vw 0 3vw;
+    min-height: 80vh;
+}
+
+/* Heading Styles */
+h1 {
+    color: #3498db;
+}
+
+/* Link Styles */
+a {
+
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+/* Example Section Styles */
+.example-section {
+    background-color: #ecf0f1;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Container */
+form {
+    max-width: 1200px;
+    margin: 0;
+	margin-top: 30px;
+    margin-left: 0;
+    margin-right: 150px;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Inputs */
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #3498db;
+	font-size: 1.8rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #000; /* Changed text color to black */
+}
+
+/* Button Styles */
+button {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 2px;
+    border-color: #000;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:green ;
+}
+
+/* Logout Link Styles */
+#user a {
+    text-decoration: none;
+    font-size: 1.9rem;
+    color: #2ecc71;
+    margin: 0.1rem;
+}
+
+#user a.btn-primary i.bi-arrow-right {
+    font-size: 2.5rem;
+    color: #1D62DB;
+}
+/* Additional Styles for List Group */
+.list-group {
+	margin-bottom: 20px;
+    border: 2px solid #000; /* Black border for the list group */
+    border-radius: 4px; /* Adjusted the border radius for a slightly different look */
+    padding: 1rem; /* Added padding for spacing */
+}
+
+.list-group-item {
+    border: none; /* Remove individual item borders */
+    border-bottom: 2px solid #000; /* Add a black bottom border between items */
+}
+
+.list-group-item:last-child {
+    border-bottom: none; /* Remove bottom border from the last item */
+}
+.form-check-input{
+	border: 2px solid #000;
+}
+.logo-title{
+	margin-top: 10px;
+}
