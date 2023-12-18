@@ -25,16 +25,32 @@ class Usuario {
 		
 	}
 
+	
+
+
 	static async inicio() {
 		const Database= require('./Database');
 		const iniciado = await Database.query("SELECT * FROM usuario WHERE id_usuario=1 AND nome='nome' AND email='email' AND senha='curso';");
 		if(iniciado.length == 0){
-			await Database.query("USE bd");
-			await Database.query("DROP TABLE tarefa");
-			await Database.query("DROP TABLE usuario");
-			await Database.query("CREATE TABLE `usuario` (  `id_usuario` int unsigned NOT NULL AUTO_INCREMENT,  `nome` varchar(45) NOT NULL,  `email` varchar(60) NOT NULL,  `senha` varchar(60) NOT NULL,  `imagem` varchar(60) NOT NULL,  PRIMARY KEY (`id_usuario`),  UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;")
-			await Database.query("INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`)VALUES (1,'nome','email', 'curso');");
-			await Database.query("INSERT INTO `usuario` (`nome`, `email`, `senha`)VALUES ('Cimol','infoCimol@gmail.com', '5ecf11a06fefcfc948affc00f7876861');");
+			await Database.query(`
+   CREATE TABLE IF NOT EXISTS tarefa (
+      id_tarefa int unsigned NOT NULL AUTO_INCREMENT,
+      title varchar(45) NOT NULL,
+      description tinytext NOT NULL,
+      status char(1) NOT NULL DEFAULT 'P',
+      usuario_id_usuario int unsigned NOT NULL,
+      PRIMARY KEY (id_tarefa),
+      UNIQUE KEY id_tarefa_UNIQUE (id_tarefa),
+      KEY fk_tarefa_usuario_id_usuario_idx (usuario_id_usuario),
+      CONSTRAINT fk_tarefa_usuario_id_usuario FOREIGN KEY (usuario_id_usuario) REFERENCES usuario (id_usuario)
+   ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=armscii8;
+`);
+
+
+			await Database.query("USE mvctrabalho2");
+			await Database.query("CREATE TABLE IF NOT EXISTS `usuario` (  `id_usuario` int unsigned NOT NULL AUTO_INCREMENT,  `nome` varchar(45) NOT NULL,  `email` varchar(60) NOT NULL,  `senha` varchar(60) NOT NULL, PRIMARY KEY (`id_usuario`),  UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;")
+			await Database.query("INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`) VALUES (1, 'nome', 'email', 'curso');");
+			await Database.query("INSERT INTO `usuario` (`nome`, `email`, `senha`, `imagem`)VALUES ('Cimol','infoCimol@gmail.com', 'abacate');");
 			await Database.query("INSERT INTO `usuario` (`nome`, `email`, `senha`)VALUES ('Testador','testando@gmail.com', '698dc19d489c4e4db73e28a713eab07b');");
 			await Database.query("CREATE TABLE `tarefa` (  `id_tarefa` int unsigned NOT NULL AUTO_INCREMENT,  `title` varchar(45) NOT NULL,  `description` tinytext NOT NULL,  `status` char(1) NOT NULL DEFAULT 'P',  `usuario_id_usuario` int unsigned NOT NULL,  PRIMARY KEY (`id_tarefa`),  UNIQUE KEY `id_tarefa_UNIQUE` (`id_tarefa`),  KEY `fk_tarefa_usuario_id_usuario_idx` (`usuario_id_usuario`),  CONSTRAINT `fk_tarefa_usuario_id_usuario` FOREIGN KEY (`usuario_id_usuario`) REFERENCES `usuario` (`id_usuario`)) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=armscii8;");
 			await Database.query("INSERT INTO `tarefa` (`title`, `description`, `usuario_id_usuario`)VALUES ('Terminar o Programa', 'Fazer o que falta ser feito', 2);");
